@@ -29,5 +29,13 @@ def hello():
 def get_api():
     return jsonify(data)
 
+@app.route('/hello/<string:name>')
+def Home(name):
+	return render_template('home.html', name_html=name)
+
+@app.route('/name')
+def name():
+    return "<font color=Green>อภิสิทธิ์</font> <font color=pink>ขุนสนธิ</font> <br> <font color=blue>เลขที่3 ม.4/10</font> "
+
 if __name__ == "__main__":
     app.run(debug=False)
